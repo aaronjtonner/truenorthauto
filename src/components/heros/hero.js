@@ -1,0 +1,61 @@
+import React from "react"
+import styled from "styled-components"
+import { Container, Flex, Actions } from "../layoutComponents"
+import { ButtonPrimary, ButtonSecondaryDark } from "../buttons"
+import QuickApproval from "../forms/quickApproval"
+
+const device = {
+  md: "43em",
+}
+
+const HeroWrapper = styled.div`
+  background: url("../../../images/hero.jpg"), rgba(253, 0, 0, 0.6);
+  background-blend-mode: overlay;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 85vh;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+
+  @media screen and (max-width: 48em) {
+    padding: 4em 0;
+  }
+`
+
+const Text = styled.div`
+  color: var(--txt-light);
+`
+
+const FormWrapper = styled.div`
+  background: #fff;
+`
+
+export default function HeroBasic() {
+  return (
+    <HeroWrapper>
+      <Container>
+        <Flex>
+          <Text className="spacing">
+            <h2 className="caps italics bold title">
+              pick your ride, customize your loan, get it delivered to your
+              doorstep
+            </h2>
+            <p>
+              Dedicated to finding the right vehicle for your needs, Whatever
+              your credit may be - we can give you options. With a large
+              inventory of over 5000+ vehicles, you can find out what you’re
+              approved for. Delivering all across Canada and to many remote
+              areas - we make buying a vehicle easy for you.
+            </p>
+          </Text>
+          <FormWrapper>
+            <QuickApproval />
+          </FormWrapper>
+        </Flex>
+      </Container>
+    </HeroWrapper>
+  )
+}
