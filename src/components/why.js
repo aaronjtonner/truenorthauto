@@ -47,7 +47,10 @@ export default function Why() {
               </li>
             </List>
           </div>
-          <StaticImage src="../images/ph.jpg" alt="" />
+          <StaticImage
+            src="../images/why.jpg"
+            alt="why use true north auto loans"
+          />
         </Flex>
       </Container>
     </Section>

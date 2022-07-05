@@ -9,13 +9,22 @@ import Solutions from "../components/solutions"
 import FullTestimonials from "../components/testimonials/fullTestimonials"
 import SingleTestimonial from "../components/testimonials/singleTestimonial"
 import Why from "../components/why"
+import { Section, Container } from "../components/layoutComponents"
 
 export default function Index() {
   return (
     <Layout>
       <HeroBasic />
       <Delivery />
-      <SingleTestimonial />
+      <Section>
+        <Container>
+          <SingleTestimonial
+            name="first last"
+            date="date"
+            review="sample review"
+          />
+        </Container>
+      </Section>
       <Solutions />
       <Why />
       <Process />

@@ -1,43 +1,69 @@
-import { StaticImage } from "gatsby-plugin-image"
 import React from "react"
 import styled from "styled-components"
-import { Section } from "../layoutComponents"
+import { FaStar, FaGoogle } from "react-icons/fa"
+import { FcGoogle } from "react-icons/fc"
+import { StaticImage } from "gatsby-plugin-image"
 
 const Wrapper = styled.div`
-  background: rgba(253, 0, 0, 0.2);
+  padding: 2em;
+  border-radius: var(--br);
+  background: var(--clr-light-secondary);
+  a {
+    text-decoration: underline;
+  }
+`
 
-  .av-img {
-    border-radius: 1000px;
+const FlexStars = styled.div`
+  display: flex;
+  & > * + * {
+    margin-left: 5px;
   }
 `
 
 const Flex = styled.div`
   display: flex;
-  justify-content: center;
   align-items: center;
+
+  & * + * {
+    margin-left: 2px;
+  }
 `
 
-export default function SingleTestimonial() {
+const Date = styled.p`
+  font-size: 0.75rem;
+  margin-top: 0;
+  line-height: 1;
+`
+
+const fontStyle = {
+  color: "gold",
+}
+
+export default function SingleTestimonial(props) {
   return (
-    <Wrapper>
-      <Section>
-        <Flex>
-          <StaticImage
-            className="av-img"
-            src="../../images/ph.jpg"
-            width={150}
-            height={150}
-          />
-          <div className="center">
-            <p className="italics">
-              "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit,
-              maxime! A, fugit minima adipisci obcaecati earum exercitationem
-              necessitatibus quo maiores!"
-            </p>
-            <p className="body--small">Aaron Tonner | Calgary, AB</p>
-          </div>
-        </Flex>
-      </Section>
+    <Wrapper className="spacing">
+      <FlexStars>
+        <FaStar style={fontStyle} />
+        <FaStar style={fontStyle} />
+        <FaStar style={fontStyle} />
+        <FaStar style={fontStyle} />
+        <FaStar style={fontStyle} />
+      </FlexStars>
+      <p className="italics">"{props.review}"</p>
+      <a
+        href="https://www.google.com/travel/hotels/misty%20ridge%20retreat/entity/CgoI-pSvxs_mzY5LEAE/reviews?q=misty%20ridge%20retreat&g2lb=2502548%2C2503771%2C2503781%2C4258168%2C4270442%2C4284970%2C4291517%2C4306835%2C4597339%2C4649665%2C4722900%2C4723331%2C4741665%2C4757164%2C4758493%2C4762561%2C4786153%2C4786958%2C4794648&hl=en-CA&gl=ca&ssta=1&rp=EPqUr8bP5s2OSxD6lK_Gz-bNjks4AkAASAHAAQI&ictx=1&sa=X&utm_campaign=sharing&utm_medium=link&utm_source=htls&ts=CAESABpJCisSJzIlMHg1MzcxYTE5Mzc4YmZjMTE3OjB4NGIxZDM3MzRmOGNiY2E3YRoAEhoSFAoHCOYPEAYYDRIHCOYPEAYYDxgCMgIQACoJCgU6A0NBRBoA&ved=0CAAQ5JsGahcKEwi4sdn916j4AhUAAAAAHQAAAAAQAw"
+        target="_blank"
+        className="accent"
+      >
+        Read more Google reviews &#8594;
+      </a>
+      <Flex>
+        <FcGoogle size={35} />
+        <div>
+          <p className="bold caps">{props.name}</p>
+          <Date className="caps">{props.date}</Date>
+        </div>
+      </Flex>
     </Wrapper>
   )
 }

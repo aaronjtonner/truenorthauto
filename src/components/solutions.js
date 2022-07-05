@@ -7,7 +7,7 @@ import { Section, Container, GridAuto } from "./layoutComponents"
 const Item = styled.div`
   div {
     padding: 2em;
-    box-shadow: var(--shadow-light-accent);
+    box-shadow: var(--shadow-light);
     border-radius: var(--br);
   }
 `
@@ -28,7 +28,7 @@ export default function Solutions() {
           <Item>
             <StaticImage src="../images/ph.jpg" alt="" />
             <div className="spacing">
-              <h3 className="bold caps">Bad or Damaged Credit</h3>
+              <h3 className="bold caps body--large">Bad or Damaged Credit</h3>
               <p>
                 Whether it’s a consumer proposal or bankruptcy, we advise you on
                 solutions that will improve your credit while getting you a car
@@ -40,7 +40,9 @@ export default function Solutions() {
           <Item>
             <StaticImage src="../images/ph.jpg" alt="" />
             <div className="spacing">
-              <h3 className="bold caps">High Interest Loan Relief</h3>
+              <h3 className="bold caps body--large">
+                High Interest Loan Relief
+              </h3>
               <p>
                 Are you in a high interest loan? We find refinancing options
                 available to you which can get you out of high interest car
@@ -51,7 +53,7 @@ export default function Solutions() {
           <Item>
             <StaticImage src="../images/ph.jpg" alt="" />
             <div className="spacing">
-              <h3 className="bold caps">Negative Equity?</h3>
+              <h3 className="bold caps body--large">Negative Equity?</h3>
               <p>
                 We make sure you get the highest value for your trade-in.
                 Through our dealer network, we find the highest bidder on your
@@ -62,7 +64,7 @@ export default function Solutions() {
           <Item>
             <StaticImage src="../images/ph.jpg" alt="" />
             <div className="spacing">
-              <h3 className="bold caps">Downsizing</h3>
+              <h3 className="bold caps body--large">Downsizing</h3>
               <p>
                 If you’re looking to lower the cost of driving - we have
                 solutions. We’ll find creative ways to lower your payment. Or if

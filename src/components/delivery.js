@@ -61,14 +61,11 @@ export default function Delivery() {
               </div>
             </FlexItem>
           </div>
-          <div>
-            <StaticImage src="../images/ph.jpg" alt="" class="stretch" />
-            <p className="center italics body--small">
-              Aaron Tonner, from Calgary, AB recieving his new Ford F150{" "}
-              <span className="accent">(and free groceries)</span> after getting
-              approved with us!
-            </p>
-          </div>
+          <StaticImage
+            src="../images/free-delivery.jpg"
+            alt="free delivery"
+            class="stretch"
+          />
         </Flex>
       </Container>
     </Section>
