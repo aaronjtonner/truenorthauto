@@ -1,9 +1,29 @@
 import React from "react"
 import styled from "styled-components"
-
-import { Section, Container, Flex, FlexMobileOpp } from "../layoutComponents"
+import { Section, Container, FlexMobileOpp } from "../layoutComponents"
 import { Label, Input, TextArea, Submit } from "./formItems"
 import Map from "../map"
+
+const Flex = styled.div`
+  display: flex;
+  align-items: center;
+  @media screen and (max-width: 56em) {
+    flex-direction: column;
+  }
+
+  & > * {
+    width: 100%;
+  }
+
+  & > * + * {
+    margin-left: 2em;
+
+    @media screen and (max-width: 56em) {
+      margin-left: 0;
+      margin-top: var(--spacer);
+    }
+  }
+`
 
 export default function QuickApproval() {
   return (

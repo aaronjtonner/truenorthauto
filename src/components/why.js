@@ -1,0 +1,55 @@
+import React from "react"
+import styled from "styled-components"
+import { Container, Flex, Section } from "./layoutComponents"
+import { FaCheckCircle } from "react-icons/fa"
+import { StaticImage } from "gatsby-plugin-image"
+
+const List = styled.ul`
+  list-style-type: none;
+`
+
+const FontStyle = {
+  color: "var(--clr-accent)",
+  fontSize: "25px",
+}
+
+export default function Why() {
+  return (
+    <Section>
+      <Container>
+        <Flex>
+          <div className="spacing">
+            <h2 className="title bold caps">why use true north auto loans?</h2>
+            <List>
+              <li>
+                <FaCheckCircle style={FontStyle} /> Free nation-wide delivery
+                with groceries or gift cards included
+              </li>
+              <li>
+                <FaCheckCircle style={FontStyle} /> Financing solutions for
+                everyone
+              </li>
+              <li>
+                <FaCheckCircle style={FontStyle} /> We are always in stock
+              </li>
+              <li>
+                <FaCheckCircle style={FontStyle} /> We welcome vehicle trades
+              </li>
+
+              <li>
+                <FaCheckCircle style={FontStyle} /> Quick approval process
+              </li>
+              <li>
+                <FaCheckCircle style={FontStyle} /> Get up to $10,000 cash back
+              </li>
+              <li>
+                <FaCheckCircle style={FontStyle} /> Go 6 months without payments
+              </li>
+            </List>
+          </div>
+          <StaticImage src="../images/ph.jpg" alt="" />
+        </Flex>
+      </Container>
+    </Section>
+  )
+}

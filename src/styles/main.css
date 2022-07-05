@@ -44,8 +44,8 @@
 
   --shadow: 0 0 1em rgba(0, 0, 0, 0.25);
   --shadow-bottom: 0 4px 2px -2px rgba(0, 0, 0, 0.25);
-  --shadow-bottom-accent: 0 4px 2px -2px rgba(145, 89, 138, 0.25);
-  --shadow-light: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  --shadow-bottom-accent: 0 4px 2px -2px rgba(253, 0, 0, 0.25);
+  --shadow-light: rgba(253, 0, 0, 0.2) 0px 8px 24px;
   --shadow-light-accent: rgba(145, 89, 138, 0.2) 0px 8px 24px;
   --br: 3px;
 }
@@ -169,6 +169,10 @@ hr {
 
 .light {
   color: var(--txt-light-secondary);
+}
+
+.underline {
+  text-decoration: underline;
 }
 
 /* util */

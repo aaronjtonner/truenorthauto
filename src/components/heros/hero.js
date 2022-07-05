@@ -9,7 +9,7 @@ const device = {
 }
 
 const HeroWrapper = styled.div`
-  background: url("../../../images/hero.jpg"), rgba(253, 0, 0, 0.6);
+  background: url("../../../images/hero-black-truck.jpg"), rgba(253, 0, 0, 0.5);
   background-blend-mode: overlay;
   background-position: center;
   background-size: cover;
@@ -30,7 +30,7 @@ const Text = styled.div`
 `
 
 const FormWrapper = styled.div`
-  background: #fff;
+  background: rgba(255, 255, 255, 0.8);
 `
 
 export default function HeroBasic() {
