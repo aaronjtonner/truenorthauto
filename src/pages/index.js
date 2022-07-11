@@ -10,6 +10,7 @@ import FullTestimonials from "../components/testimonials/fullTestimonials"
 import SingleTestimonial from "../components/testimonials/singleTestimonial"
 import Why from "../components/why"
 import { Section, Container } from "../components/layoutComponents"
+import KwesForm from "../components/forms/kwesForm"
 
 export default function Index() {
   return (
@@ -31,6 +32,7 @@ export default function Index() {
       <Inventory />
       <FullTestimonials />
       <Cta />
+      <KwesForm />
     </Layout>
   )
 }
