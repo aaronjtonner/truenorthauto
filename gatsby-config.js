@@ -21,5 +21,18 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-anchor-links`,
+    {
+      resolve: "gatsby-plugin-page-progress",
+      options: {
+        includePaths: ["/get-a-loan"],
+        excludePaths: [],
+        height: 9,
+        prependToBody: false,
+        color: `#663399`,
+        footerHeight: 500,
+        headerHeight: 0,
+      },
+    },
   ],
 }
