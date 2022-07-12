@@ -2,7 +2,7 @@ import React from "react"
 import kwesforms from "kwesforms"
 
 export default function KwesForm() {
-  kwesforms.init()
+  // kwesforms.init()
   return (
     <div>
       <form
