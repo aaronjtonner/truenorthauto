@@ -26,22 +26,22 @@ export default function FullTestimonials() {
         <GridTwo>
           <SingleTestimonial
             name="first last"
-            date="date"
+            location="location"
             review="sample review"
           />
           <SingleTestimonial
             name="first last"
-            date="date"
+            location="location"
             review="sample review"
           />
           <SingleTestimonial
             name="first last"
-            date="date"
+            location="location"
             review="sample review"
           />
           <SingleTestimonial
             name="first last"
-            date="date"
+            location="location"
             review="sample review"
           />
         </GridTwo>

@@ -10,26 +10,20 @@ import FullTestimonials from "../components/testimonials/fullTestimonials"
 import SingleTestimonial from "../components/testimonials/singleTestimonial"
 import Why from "../components/why"
 import { Section, Container } from "../components/layoutComponents"
+import CustomerBanner1 from "../components/customerBanner1"
+import CustomerBanner2 from "../components/customerBanner2"
 
 export default function Index() {
   return (
     <Layout>
       <HeroBasic />
+      <CustomerBanner1 />
       <Delivery />
-      <Section>
-        <Container>
-          <SingleTestimonial
-            name="first last"
-            date="date"
-            review="sample review"
-          />
-        </Container>
-      </Section>
       <Solutions />
       <Why />
       <Process />
       <Inventory />
-      <FullTestimonials />
+      <CustomerBanner2 />
       <Cta />
     </Layout>
   )

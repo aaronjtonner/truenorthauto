@@ -18,7 +18,6 @@ const Header = styled.header`
   right: 0;
   z-index: 999;
   transition: top 0.5s ease-out;
-  position: fixed;
 `
 
 const Headertop = styled.div`
