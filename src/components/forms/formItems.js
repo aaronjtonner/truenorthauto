@@ -4,11 +4,40 @@ export const Label = styled.label`
   display: block;
   font-family: var(--ff);
   font-size: var(--fs-sm);
+  text-transform: capitalize;
 `
 
 export const Input = styled.input`
   display: block;
   width: 100%;
+  border-radius: var(--br);
+  border: 1px solid var(--txt-dark-secondary);
+  padding: 1.2em;
+  font-size: var(--fs-sm);
+  font-family: var(--ff);
+
+  &:focus {
+    outline: 1px solid var(--txt-dark-secondary);
+  }
+`
+
+export const Select = styled.select`
+  display: block;
+  width: 100%;
+  border-radius: var(--br);
+  border: 1px solid var(--txt-dark-secondary);
+  padding: 1.2em;
+  font-size: var(--fs-sm);
+  font-family: var(--ff);
+`
+export const LabelInline = styled.label`
+  display: inline;
+  font-family: var(--ff);
+  font-size: var(--fs-sm);
+`
+
+export const InputInline = styled.input`
+  display: inline;
   border-radius: var(--br);
   border: 1px solid var(--txt-dark-secondary);
   padding: 1.2em;
