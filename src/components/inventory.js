@@ -7,6 +7,10 @@ import { ButtonPrimary } from "./buttons"
 const VehicleType = styled.div`
   // box-shadow: var(--shadow-light);
   // padding: 2em;
+
+  p {
+    text-align: center;
+  }
 `
 
 const P = styled.p`
@@ -36,27 +40,27 @@ export default function Inventory() {
           </P>
         </div>
         <GridAuto>
-          <VehicleType className="spacing">
+          <VehicleType className="">
             <StaticImage src="../images/inventory/sedans.jpg" alt="sedan" />
             <p className="bold upper">sporty and budget-friendly sedans</p>
           </VehicleType>
-          <VehicleType className="spacing">
+          <VehicleType className="">
             <StaticImage
               src="../images/inventory/sport-suvs.jpg"
               alt="sport suvs"
             />
-            <p className="bold upper">sporty and budget-friendly sedans</p>
+            <p className="bold upper">sport suv's</p>
           </VehicleType>
-          <VehicleType className="spacing">
+          <VehicleType className="">
             <StaticImage
               src="../images/inventory/luxury-suvs.jpg"
               alt="luxury suvs"
             />
-            <p className="bold upper">sporty and budget-friendly sedans</p>
+            <p className="bold upper">luxury suv's</p>
           </VehicleType>
-          <VehicleType className="spacing">
+          <VehicleType className="">
             <StaticImage src="../images/inventory/trucks.jpg" alt="trucks" />
-            <p className="bold upper">sporty and budget-friendly sedans</p>
+            <p className="bold upper">light and heavy-duty pickup trucks</p>
           </VehicleType>
         </GridAuto>
         <center>

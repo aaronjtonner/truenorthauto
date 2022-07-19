@@ -3,14 +3,31 @@ import React from "react"
 import styled from "styled-components"
 import { ButtonPrimary } from "./buttons"
 import { Section, Container, GridAuto } from "./layoutComponents"
+import {
+  FaRegCreditCard,
+  FaRegArrowAltCircleDown,
+  FaHandHoldingUsd,
+  FaRegChartBar,
+} from "react-icons/fa"
+
+// credit FaRegCreditCard
+// downsize FaCompressAlt or FaSortAmountDown or FaRegArrowAltCircleDown
+// equity FaDollarSign or FaDonate or FaHandHoldingUsd
+// interest FaRegChartBar
 
 const Item = styled.div`
   div {
     padding: 2em;
     box-shadow: var(--shadow-light);
     border-radius: var(--br);
+    text-align: center;
   }
 `
+
+const IconStyle = {
+  fontSize: "60px",
+  color: "var(--clr-accent)",
+}
 
 export default function Solutions() {
   return (
@@ -26,8 +43,8 @@ export default function Solutions() {
         </div>
         <GridAuto>
           <Item>
-            <StaticImage src="../images/ph.jpg" alt="" />
             <div className="spacing">
+              <FaRegCreditCard style={IconStyle} />
               <h3 className="bold caps body--large">Bad or Damaged Credit</h3>
               <p>
                 Whether it’s a consumer proposal or bankruptcy, we advise you on
@@ -38,8 +55,8 @@ export default function Solutions() {
             </div>
           </Item>
           <Item>
-            <StaticImage src="../images/ph.jpg" alt="" />
             <div className="spacing">
+              <FaRegChartBar style={IconStyle} />
               <h3 className="bold caps body--large">
                 High Interest Loan Relief
               </h3>
@@ -51,8 +68,8 @@ export default function Solutions() {
             </div>
           </Item>
           <Item>
-            <StaticImage src="../images/ph.jpg" alt="" />
             <div className="spacing">
+              <FaHandHoldingUsd style={IconStyle} />
               <h3 className="bold caps body--large">Negative Equity?</h3>
               <p>
                 We make sure you get the highest value for your trade-in.
@@ -62,8 +79,8 @@ export default function Solutions() {
             </div>
           </Item>
           <Item>
-            <StaticImage src="../images/ph.jpg" alt="" />
             <div className="spacing">
+              <FaRegArrowAltCircleDown style={IconStyle} />
               <h3 className="bold caps body--large">Downsizing</h3>
               <p>
                 If you’re looking to lower the cost of driving - we have
