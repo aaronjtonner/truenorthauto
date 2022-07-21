@@ -160,8 +160,17 @@ const ItemFlex = styled.div`
 const BirthdayFlex = styled.div`
   display: flex;
   justify-content: center;
+
+  @media screen and (max-width: 48em) {
+    flex-direction: column;
+  }
   > * + * {
     margin-left: 10px;
+
+    @media screen and (max-width: 48em) {
+      margin-left: 0;
+      margin-top: 10px;
+    }
   }
 `
 
@@ -174,12 +183,22 @@ const VehicleChoice = styled.div`
   display: flex;
   justify-content: center;
 
+  @media screen and (max-width: 48em) {
+    flex-direction: column;
+  }
+
   & > * + * {
     margin-left: 10px;
+
+    @media screen and (max-width: 48em) {
+      margin-left: 0;
+      margin-top: 10px;
+    }
   }
 
   div {
-    width: 150px;
+    max-width: 150px;
+    width: 100%;
 
     label {
       display: flex;
