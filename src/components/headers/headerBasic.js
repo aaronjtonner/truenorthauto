@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import { Container } from "../layoutComponents"
+import { AnchorLink } from "gatsby-plugin-anchor-links"
 
 import Logo from "../../images/logo.jpg"
 
@@ -202,7 +203,7 @@ const Dropdown = styled.li`
   }
 `
 
-const StyledLink = styled(props => <Link {...props} />)`
+const StyledLink = styled(props => <AnchorLink {...props} />)`
   text-decoration: none;
   text-transform: uppercase;
   font-size: var(--fs-sm);
@@ -282,28 +283,25 @@ export default function HeaderBasic() {
               </Burger>
               <NavList nav={nav}>
                 <li>
-                  <StyledLink to="/">how it works</StyledLink>
+                  <StyledLink to="/#how">how it works</StyledLink>
                 </li>
                 <li>
-                  <StyledLink to="/">process</StyledLink>
+                  <StyledLink to="/#process">process</StyledLink>
                 </li>
                 <li>
-                  <StyledLink to="/">inventory</StyledLink>
+                  <StyledLink to="/#inventory">inventory</StyledLink>
                 </li>
                 <li>
-                  <StyledLink to="/">testimonials</StyledLink>
+                  <StyledLink to="/#testimonials">testimonials</StyledLink>
                 </li>
                 <li>
-                  <StyledLink to="/">contact</StyledLink>
-                </li>
-                <li>
-                  <GetQuoteMobile to="/">
+                  <GetQuoteMobile to="/get-a-loan">
                     <span>get approved</span>
                   </GetQuoteMobile>
                 </li>
               </NavList>
             </Nav>
-            <GetQuote to="/">
+            <GetQuote to="/get-a-loan">
               <span>get approved</span>
             </GetQuote>
           </Headerbottom>

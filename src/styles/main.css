@@ -31,9 +31,9 @@
   --clr-dark: #000000;
   --clr-light: #fff;
   --clr-light-secondary: #f3f3f3;
-  --clr-accent: #FD0000;
-  --clr-accent-lighter: #FD3030;
-  --clr-accent-darker: #E50000;
+  --clr-accent: #C73232;
+  --clr-accent-lighter: #D64040;
+  --clr-accent-darker: #B83333;
   --clr-overlay: rgba(0, 0, 0, 0.6);
   --clr-overlay-darker: rgba(0, 0, 0, 0.8);
 
@@ -44,9 +44,9 @@
 
   --shadow: 0 0 1em rgba(0, 0, 0, 0.25);
   --shadow-bottom: 0 4px 2px -2px rgba(0, 0, 0, 0.25);
-  --shadow-bottom-accent: 0 4px 2px -2px rgba(253, 0, 0, 0.25);
+  --shadow-bottom-accent: 0 4px 2px -2px rgba(199, 50, 50, 0.25);
   --shadow-light: rgba(0, 0, 0, 0.25) 0px 8px 24px;
-  --shadow-light-accent: rgba(253, 0, 0, 0.2) 0px 8px 24px;
+  --shadow-light-accent: rgba(199, 50, 50, 0.2) 0px 8px 24px;
   --br: 3px;
 }
 

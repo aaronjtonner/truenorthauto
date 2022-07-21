@@ -38,7 +38,7 @@ export default function Solutions() {
             financing solutions available for everyone
           </h2>
           <p className="accent upper">
-            worried about your credit history? We’ve got your back
+            worried about your credit history? We’ve got your back!
           </p>
         </div>
         <GridAuto>
@@ -92,7 +92,7 @@ export default function Solutions() {
           </Item>
         </GridAuto>
         <div className="center">
-          <ButtonPrimary to="">get a loan now</ButtonPrimary>
+          <ButtonPrimary to="/get-a-loan">get a loan now</ButtonPrimary>
         </div>
       </Container>
     </Section>

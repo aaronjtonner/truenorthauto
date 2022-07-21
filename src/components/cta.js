@@ -4,7 +4,7 @@ import QuickApproval from "./forms/quickApproval"
 import { Container, FlexMobileOpp, Section } from "./layoutComponents"
 
 const Wrapper = styled.div`
-  background: url("../../images/hero.jpg"), rgba(253, 0, 0, 0.5);
+  background: url("../../images/hero.jpg"), rgba(0, 0, 0, 0.7);
   background-blend-mode: overlay;
   background-position: center;
   background-repeat: no-repeat;
@@ -38,14 +38,15 @@ export default function Cta() {
             <Div className="spacing-lg">
               <Item className="spacing">
                 <h3 className="bold upper italics heading">
-                  pick your ride, customize your loan, delivered to your
+                  pick your ride, customize your loan, get it delivered to your
                   doorstep
                 </h3>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. In
-                  maxime rerum earum quod nulla, soluta unde dolore velit odio
-                  totam vitae ducimus excepturi voluptate voluptatem error sunt
-                  ipsum ex tenetur!
+                  Dedicated to finding the right vehicle for your needs,
+                  whatever your credit may be - we can give you options. With a
+                  large inventory of over 5000+ vehicles, you can find out what
+                  you’re approved for. Delivering all across Canada and to many
+                  remote areas - we make buying a vehicle easy for you.
                 </p>
               </Item>
               <Item className="spacing">
@@ -53,10 +54,10 @@ export default function Cta() {
                   we provide free groceries with every delivery
                 </h3>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. In
-                  maxime rerum earum quod nulla, soluta unde dolore velit odio
-                  totam vitae ducimus excepturi voluptate voluptatem error sunt
-                  ipsum ex tenetur!
+                  We understand the convenience of having groceries delivered to
+                  your door. With every vehicle purchase, we want to give you
+                  that convenience. Or the option of a gift card for groceries
+                  is available.
                 </p>
               </Item>
               <Item className="spacing">
@@ -64,10 +65,10 @@ export default function Cta() {
                   financing solutions for any credit situation
                 </h3>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. In
-                  maxime rerum earum quod nulla, soluta unde dolore velit odio
-                  totam vitae ducimus excepturi voluptate voluptatem error sunt
-                  ipsum ex tenetur!
+                  Whether it’s a consumer proposal or bankruptcy, we advise you
+                  on solutions that will improve your credit while getting you a
+                  car loan. We also have programs offered to those who have had
+                  a repossession in the past. Our mission is to get you driving!
                 </p>
               </Item>
             </Div>

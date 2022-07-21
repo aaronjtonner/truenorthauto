@@ -36,7 +36,7 @@ const Location = styled.p`
 `
 
 const fontStyle = {
-  color: "gold",
+  color: "#C73232",
 }
 
 export default function SingleTestimonial(props) {

@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: "True North Auto Loans",
-    titleTemplate: "%s ·",
+    titleTemplate: "· %s",
     description: "True North Auto Loans",
     url: "https://www.truenorthautoloans.com", // No trailing slash allowed!
     siteUrl: "https://www.truenorthautoloans.com",
@@ -32,7 +32,7 @@ module.exports = {
       options: {
         includePaths: ["/get-a-loan"],
         excludePaths: [],
-        height: 9,
+        height: 12,
         prependToBody: false,
         color: `#FD0000`,
         footerHeight: 500,

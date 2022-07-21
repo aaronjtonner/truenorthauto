@@ -9,7 +9,7 @@ const device = {
 }
 
 const HeroWrapper = styled.div`
-  background: url("../../../images/hero-black-truck.jpg"), rgba(253, 0, 0, 0.5);
+  background: url("../../../images/hero-black-truck.jpg"), rgba(0, 0, 0, 0.7);
   background-blend-mode: overlay;
   background-position: center;
   background-size: cover;
@@ -44,7 +44,7 @@ export default function HeroBasic() {
               doorstep
             </h2>
             <p>
-              Dedicated to finding the right vehicle for your needs, Whatever
+              Dedicated to finding the right vehicle for your needs, whatever
               your credit may be - we can give you options. With a large
               inventory of over 5000+ vehicles, you can find out what you’re
               approved for. Delivering all across Canada and to many remote

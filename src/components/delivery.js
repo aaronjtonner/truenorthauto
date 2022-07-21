@@ -11,7 +11,7 @@ const FlexItem = styled.div`
 `
 
 const fontStyle = {
-  color: "#FD0000",
+  color: "#C73232",
   fontSize: "50px",
 }
 
@@ -22,7 +22,7 @@ export default function Delivery() {
         <div className="center">
           <h2 className="title bold italics">free nation-wide delivery</h2>
           <p className="accent upper">
-            we've delivered 200+ vehilves to northern canada
+            5000+ vehicles in stock ready to be shipped
           </p>
         </div>
         <Flex>

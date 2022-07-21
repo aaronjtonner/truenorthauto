@@ -60,7 +60,9 @@ export default function Process() {
             </Flex>
           </Item>
         </GridThree>
-        <ButtonPrimary to="">see what you qualify for &#x2192;</ButtonPrimary>
+        <ButtonPrimary to="/get-a-loan">
+          see what you qualify for &#x2192;
+        </ButtonPrimary>
       </Container>
     </Section>
   )

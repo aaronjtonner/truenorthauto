@@ -5,7 +5,7 @@ import styled from "styled-components"
 import { Info } from "../info"
 import { Container } from "../layoutComponents"
 import { ButtonInline } from "../buttons"
-
+import { AnchorLink } from "gatsby-plugin-anchor-links"
 import Logo from "../../images/logo.jpg"
 import AaronTonnerWebSolutionsLogo from "../../images/aaron-tonner-web-solutions-logo.svg"
 import Facebook from "../../images/socials/facebook.svg"
@@ -161,6 +161,17 @@ const StyledLink = styled(props => <Link {...props} />)`
     opacity: 0.7;
   }
 `
+const StyledAnchorLink = styled(props => <AnchorLink {...props} />)`
+  text-transform: capitalize;
+  color: var(--txt-dark);
+  font-weight: var(--fw-400);
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    opacity: 0.7;
+  }
+`
 
 const Author = styled.div`
   color: var(--txt-dark-secondary);
@@ -232,25 +243,26 @@ export default function Footer() {
               <p className="heading">links</p>
               <ul>
                 <li>
-                  <StyledLink to="/">home</StyledLink>
+                  <StyledAnchorLink to="/">home</StyledAnchorLink>
                 </li>
                 <li>
-                  <StyledLink to="/">how it works</StyledLink>
+                  <StyledAnchorLink to="/#how">how it works</StyledAnchorLink>
                 </li>
                 <li>
-                  <StyledLink to="/">process</StyledLink>
+                  <StyledAnchorLink to="/#process">process</StyledAnchorLink>
                 </li>
                 <li>
-                  <StyledLink to="/">inventory</StyledLink>
+                  <StyledAnchorLink to="/#inventory">
+                    inventory
+                  </StyledAnchorLink>
                 </li>
                 <li>
-                  <StyledLink to="">testimonials</StyledLink>
+                  <StyledAnchorLink to="/#testimonials">
+                    testimonials
+                  </StyledAnchorLink>
                 </li>
                 <li>
-                  <StyledLink to="">contact</StyledLink>
-                </li>
-                <li>
-                  <StyledLink to="/">get approved today</StyledLink>
+                  <StyledLink to="/get-a-loan">get approved today</StyledLink>
                 </li>
               </ul>
             </FlexItem>

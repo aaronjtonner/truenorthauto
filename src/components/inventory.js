@@ -67,9 +67,7 @@ export default function Inventory() {
           <More className=" bold">&#x2b; more options available</More>
         </center>
         <center>
-          <ButtonPrimary to="">
-            see what vehicle you qualify for &#8594;
-          </ButtonPrimary>
+          <ButtonPrimary to="/get-a-loan">pick your ride &#8594;</ButtonPrimary>
         </center>
       </Container>
     </Section>
