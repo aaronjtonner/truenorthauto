@@ -4,7 +4,7 @@ import styled from "styled-components"
 import { Container } from "../layoutComponents"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 
-import Logo from "../../images/logo.jpg"
+import Logo from "../../images/logo-tnal.svg"
 
 const device = {
   sm: "18em",

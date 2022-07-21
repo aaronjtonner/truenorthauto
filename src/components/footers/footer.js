@@ -6,7 +6,7 @@ import { Info } from "../info"
 import { Container } from "../layoutComponents"
 import { ButtonInline } from "../buttons"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
-import Logo from "../../images/logo.jpg"
+import Logo from "../../images/logo-tnal.svg"
 import AaronTonnerWebSolutionsLogo from "../../images/aaron-tonner-web-solutions-logo.svg"
 import Facebook from "../../images/socials/facebook.svg"
 import Instagram from "../../images/socials/instagram.svg"
@@ -190,7 +190,7 @@ const Author = styled.div`
   }
 
   img {
-    width: 250px;
+    width: 150px;
   }
 `
 
