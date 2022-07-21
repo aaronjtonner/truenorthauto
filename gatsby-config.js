@@ -21,7 +21,12 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-anchor-links`,
+    {
+      resolve: "gatsby-plugin-anchor-links",
+      options: {
+        duration: 10,
+      },
+    },
     {
       resolve: "gatsby-plugin-page-progress",
       options: {
@@ -29,7 +34,7 @@ module.exports = {
         excludePaths: [],
         height: 9,
         prependToBody: false,
-        color: `#663399`,
+        color: `#FD0000`,
         footerHeight: 500,
         headerHeight: 0,
       },

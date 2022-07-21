@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import Layout from "../components/layout"
-import { Container, Section } from "../components/layoutComponents"
+import { Section } from "../components/layoutComponents"
 import {
   Label,
   Input,
@@ -18,44 +18,129 @@ const device = {
   md: "48em",
 }
 
+const Container = styled.div`
+  width: 50%;
+  margin: 0 auto;
+  max-width: 85rem;
+`
+
 const Wrapper = styled.div``
 
-const PartTitle = styled.h2``
+const PartTitle = styled.h2`
+  font-size: var(--fs-1);
+  text-transform: capitalize;
+  font-style: italic;
+  margin-bottom: var(--spacer-lg);
+  text-align: center;
+
+  span {
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-400);
+    display: block;
+    text-transform: none;
+  }
+`
 
 const QuestionTitle = styled.h3`
   font-size: var(--fs-3);
-  text-transform: capitalize;
-  color: var(--clr-accent);
-  margin-bottom: var(--spacer);
+  font-weight: var(--fw-400);
+  text-transform: uppercase;
+  margin-bottom: var(--spacer-sm);
+  text-align: center;
 `
 
 const Part = styled.div`
   height: 100vh;
-  // display: flex;
-  // align-items: center;
-
-  // div {
-  //   flex-shrink: 0;
-  //   flex-grow: 1;
-  // }
+  display: grid;
+  place-items: center;
 `
 
 const QuestionArea = styled.div`
-  background: var(--clr-light-secondary);
+  border: 1px solid rgba(0, 0, 0, 0.25);
   padding: 2em;
   border-radius: var(--br);
+
+  & > * + * {
+    margin-top: var(--spacer);
+  }
+`
+
+const Anchors = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  & > * + * {
+    margin-left: 10px;
+  }
+
+  .previous {
+    cursor: pointer;
+    display: inline-block;
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-button);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--clr-accent);
+    text-decoration: none;
+  }
+
+  .next {
+    cursor: pointer;
+    display: inline-block;
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-button);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1em 1.33em;
+    transition: all 0.2s linear;
+
+    background: transparent;
+    color: var(--clr-accent);
+    border: 1px solid var(--clr-accent);
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  .submit {
+    cursor: pointer;
+    display: inline-block;
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-button);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1em 2em;
+    background: var(--clr-accent);
+    color: var(--txt-light);
+    border: 1px solid var(--clr-accent);
+    transition: all 0.2s linear;
+    -webkit-appearance: none;
+
+    :hover {
+      background: var(--clr-accent-darker);
+    }
+  }
 `
 
 const Flex = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
+
+  & > * {
+    width: 100%;
+  }
 
   @media screen and (max-width: ${device.md}) {
     flex-direction: column;
   }
 
   & > * + * {
-    margin-left: 2em;
+    margin-left: 10px;
 
     @media screen and (max-width: ${device.md}) {
       margin-left: 0;
@@ -68,14 +153,21 @@ const ItemFlex = styled.div`
   display: flex;
   align-items: center;
   & > * + * {
-    margin-left: 2px;
+    margin-left: 5px;
   }
 `
 
 const BirthdayFlex = styled.div`
+  display: flex;
+  justify-content: center;
   > * + * {
-    margin-left: 2px;
+    margin-left: 10px;
   }
+`
+
+const FlexCenter = styled.div`
+  display: flex;
+  justify-content: center;
 `
 
 const VehicleChoice = styled.div`
@@ -88,22 +180,14 @@ const VehicleChoice = styled.div`
 
   div {
     width: 150px;
-    height: 150px;
+
     label {
       display: flex;
       flex-direction: column;
 
       .label-img {
         border: 1px solid var(--txt-dark-secondary);
-
-        &:hover {
-          transform: scale(1.01);
-          transition: all 0.3s;
-        }
-
-        &:active {
-          border: 1px solid var(--clr-accent);
-        }
+        height: 150px;
       }
     }
   }
@@ -111,7 +195,7 @@ const VehicleChoice = styled.div`
 export default function GetALoan() {
   return (
     <Wrapper>
-      <Section>
+      <>
         <Container>
           <form
             name="contact"
@@ -122,8 +206,13 @@ export default function GetALoan() {
           >
             <Part id="part1">
               <div>
-                <PartTitle>title</PartTitle>
-                <QuestionArea className="spacing">
+                <PartTitle>
+                  start: pick your ride{" "}
+                  <span>
+                    Dedicated to finding the right vehicle for your needs
+                  </span>
+                </PartTitle>
+                <QuestionArea>
                   <QuestionTitle className="center">
                     what vehicle do you want?
                   </QuestionTitle>
@@ -148,6 +237,7 @@ export default function GetALoan() {
                         name="vehicleChoice"
                         id="car"
                         value="car"
+                        defaultChecked
                       />
                     </div>
                     <div className="spacing-sm">
@@ -186,25 +276,38 @@ export default function GetALoan() {
                   <div>
                     <QuestionTitle>do you have a trade-in?</QuestionTitle>
                     <div className="spacing-sm">
-                      <Select name="tradeIn" id="tradeIn">
+                      <Select className="center" name="tradeIn" id="tradeIn">
                         <option value="no" selected>
-                          No
+                          Nope!
                         </option>
-                        <option value="yes">yes</option>
+                        <option value="yes">Yes I do!</option>
                       </Select>
                     </div>
                   </div>
+                  <Anchors>
+                    <AnchorLink
+                      className="next"
+                      to="/get-a-loan#part2"
+                      title="continue"
+                    />
+                  </Anchors>
                 </QuestionArea>
-                <AnchorLink to="/get-a-loan#part2" title="continue" />
               </div>
             </Part>
             <Part id="part2">
               <div>
-                <PartTitle>title</PartTitle>
+                <PartTitle>
+                  your bugdet{" "}
+                  <span>We'll find a vehicle that fits your budget.</span>
+                </PartTitle>
                 <QuestionArea className="spacing">
                   <QuestionTitle>what is your monthly budget?</QuestionTitle>
                   <div className="spacing-sm">
-                    <Select name="monthlyBudget" id="monthlyBudget">
+                    <Select
+                      className="center"
+                      name="monthlyBudget"
+                      id="monthlyBudget"
+                    >
                       <option value="$100 per month">$100 / month</option>
                       <option value="$100-$500 per month">
                         $100 - $500 / month
@@ -214,54 +317,73 @@ export default function GetALoan() {
                       </option>
                       <option value="$1000+ per month">$1000+ / month</option>
                     </Select>
-                  </div>
+                  </div>{" "}
+                  <Anchors>
+                    <AnchorLink
+                      className="previous"
+                      to="/get-a-loan#part1"
+                      title="previous"
+                    />
+                    <AnchorLink
+                      className="next"
+                      to="/get-a-loan#part3"
+                      title="continue"
+                    />
+                  </Anchors>
                 </QuestionArea>
-                <AnchorLink to="/get-a-loan#part3" title="continue" />
               </div>
             </Part>
             <Part id="part3">
               <div>
-                <PartTitle>title</PartTitle>
+                <PartTitle>
+                  employment information{" "}
+                  <span>
+                    Being specific will help us find you the best offer
+                  </span>
+                </PartTitle>
                 <QuestionArea className="spacing">
                   <QuestionTitle>what is your employment status?</QuestionTitle>
-                  <div>
-                    <div className="spacing-sm">
-                      <input
-                        type="radio"
-                        name="employmentStatus"
-                        id="full-time"
-                        value="full-time"
-                      />
-                      <label for="full-time">Full-time</label>
+                  <center>
+                    <div>
+                      <div className="spacing-sm">
+                        <input
+                          type="radio"
+                          name="employmentStatus"
+                          id="full-time"
+                          value="full-time"
+                          defaultChecked
+                        />
+                        <label for="full-time">Full-time</label>
+                      </div>
+                      <div className="spacing-sm">
+                        <input
+                          type="radio"
+                          name="employmentStatus"
+                          id="part-time"
+                          value="part-time"
+                        />
+                        <label for="part-time">Part-time</label>
+                      </div>
+                      <div className="spacing-sm">
+                        <input
+                          type="radio"
+                          name="employmentStatus"
+                          id="self-employed"
+                          value="self-employed"
+                        />
+                        <label for="self-employed">Self-employed</label>
+                      </div>
+                      <div className="spacing-sm">
+                        <input
+                          type="radio"
+                          name="employmentStatus"
+                          id="pension"
+                          value="pension"
+                        />
+                        <label for="pension">Pension</label>
+                      </div>
                     </div>
-                    <div className="spacing-sm">
-                      <input
-                        type="radio"
-                        name="employmentStatus"
-                        id="part-time"
-                        value="part-time"
-                      />
-                      <label for="part-time">Part-time</label>
-                    </div>
-                    <div className="spacing-sm">
-                      <input
-                        type="radio"
-                        name="employmentStatus"
-                        id="self-employed"
-                        value="self-employed"
-                      />
-                      <label for="self-employed">Self-employed</label>
-                    </div>
-                    <div className="spacing-sm">
-                      <input
-                        type="radio"
-                        name="employmentStatus"
-                        id="pension"
-                        value="pension"
-                      />
-                      <label for="pension">Pension</label>
-                    </div>
-                  </div>
+                  </center>
                   <div>
                     <QuestionTitle>what is your monthly income?</QuestionTitle>
                     <ItemFlex>
@@ -272,32 +394,59 @@ export default function GetALoan() {
                         id="monthlyIncome"
                         datatype="currency"
                         placeholder="Monthly Income"
+                        defaultValue="1000"
+                        step="1000"
+                        className="center"
+                        required
                       />
+                      <p>monthly</p>
                     </ItemFlex>
                   </div>
+                  <Anchors>
+                    <AnchorLink
+                      className="previous"
+                      to="/get-a-loan#part2"
+                      title="previous"
+                    />
+                    <AnchorLink
+                      className="next"
+                      to="/get-a-loan#part4"
+                      title="continue"
+                    />
+                  </Anchors>
                 </QuestionArea>
-                <AnchorLink to="/get-a-loan#part4" title="continue" />
               </div>
             </Part>
             <Part id="part4">
               <div>
-                <PartTitle>title</PartTitle>
-                <QuestionArea className="spacing">
-                  <QuestionTitle>where do you work?</QuestionTitle>
+                <PartTitle>
+                  more employment information{" "}
+                  <span>
+                    Being specific will help us find you the best offer
+                  </span>
+                </PartTitle>
+                <QuestionArea className="spacing-md">
                   <div>
+                    <QuestionTitle>where do you work?</QuestionTitle>
                     <Flex>
-                      <div className="spacing-sm">
+                      <center className="spacing-sm">
                         <label for="companyName">Company name:</label> <br />
                         <Input
                           type="text"
                           name="companyName"
                           id="companyName"
+                          required
                         />
-                      </div>
-                      <div className="spacing-sm">
+                      </center>
+                      <center className="spacing-sm">
                         <label for="jobTitle">Job title:</label> <br />
-                        <Input type="text" name="jobTitle" id="jobTitle" />
-                      </div>
+                        <Input
+                          type="text"
+                          name="jobTitle"
+                          id="jobTitle"
+                          required
+                        />
+                      </center>
                     </Flex>
                   </div>
                   <div>
@@ -305,7 +454,11 @@ export default function GetALoan() {
                       how long have you worked here?
                     </QuestionTitle>
                     <div>
-                      <Select name="lengthOfWork" id="lengthOfWork">
+                      <Select
+                        className="center"
+                        name="lengthOfWork"
+                        id="lengthOfWork"
+                      >
                         <option value="1 - 3 months">1 - 3 Months</option>
                         <option value="3 - 6 months">3 - 6 Months</option>
                         <option value="6 - 12 months">6 - 12 Months</option>
@@ -313,38 +466,56 @@ export default function GetALoan() {
                       </Select>
                     </div>
                   </div>
+                  <Anchors>
+                    <AnchorLink
+                      className="previous"
+                      to="/get-a-loan#part3"
+                      title="previous"
+                    />
+                    <AnchorLink
+                      className="next"
+                      to="/get-a-loan#part5"
+                      title="continue"
+                    />
+                  </Anchors>
                 </QuestionArea>
-                <AnchorLink to="/get-a-loan#part5" title="continue" />
               </div>
             </Part>
             <Part id="part5">
               <div>
-                <PartTitle>title</PartTitle>
+                <PartTitle>
+                  your living situation{" "}
+                  <span>
+                    Being specific will help us find you the best offer
+                  </span>
+                </PartTitle>
                 <QuestionArea className="spacing">
                   <QuestionTitle>
-                    do you rent or own a home / apartment?
+                    do you rent or own property? <span></span>
                   </QuestionTitle>
-                  <div>
-                    <div className="spacing-sm">
-                      <input
-                        type="radio"
-                        name="rentOrOwn"
-                        id="rent"
-                        value="rent"
-                        checked
-                      />
-                      <label for="rent">Rent</label>
+                  <FlexCenter>
+                    <div>
+                      <div className="spacing-sm">
+                        <input
+                          type="radio"
+                          name="rentOrOwn"
+                          id="rent"
+                          value="rent"
+                          defaultChecked
+                        />
+                        <label for="rent">Rent</label>
+                      </div>
+                      <div className="spacing-sm">
+                        <input
+                          type="radio"
+                          name="rentOrOwn"
+                          id="own"
+                          value="own"
+                        />
+                        <label for="own">Own</label>
+                      </div>
                     </div>
-                    <div className="spacing-sm">
-                      <input
-                        type="radio"
-                        name="rentOrOwn"
-                        id="own"
-                        value="own"
-                      />
-                      <label for="own">Own</label>
-                    </div>
-                  </div>
+                  </FlexCenter>
                   <div>
                     <QuestionTitle>what is your monthly payment?</QuestionTitle>
                     <div>
@@ -356,17 +527,38 @@ export default function GetALoan() {
                           id="monthlyExpense"
                           datatype="currency"
                           placeholder="Monthly Payment"
+                          defaultValue="500"
+                          step="100"
+                          className="center"
                         />
+                        <p>monthly</p>
                       </ItemFlex>
                     </div>
                   </div>
+                  <Anchors>
+                    <AnchorLink
+                      className="previous"
+                      to="/get-a-loan#part4"
+                      title="previous"
+                    />
+                    <AnchorLink
+                      className="next"
+                      to="/get-a-loan#part6"
+                      title="continue"
+                    />
+                  </Anchors>
                 </QuestionArea>
-                <AnchorLink to="/get-a-loan#part6" title="continue" />
               </div>
             </Part>
             <Part id="part6">
               <div>
-                <PartTitle>title</PartTitle>
+                <PartTitle>
+                  get it delivered to your doorstep{" "}
+                  <span>
+                    Knowing your location withh help us find the best deals in
+                    your area
+                  </span>
+                </PartTitle>
                 <QuestionArea className="spacing">
                   <QuestionTitle>what is your home address?</QuestionTitle>
                   <div className="spacing">
@@ -377,6 +569,7 @@ export default function GetALoan() {
                           name="address"
                           id="address"
                           placeholder="123 Rose St"
+                          required
                         />
                         <Label for="address">address line 1</Label>
                       </div>
@@ -386,18 +579,28 @@ export default function GetALoan() {
                           name="city"
                           id="city"
                           placeholder="Calgary"
+                          required
                         />
                         <Label for="city">city</Label>
                       </div>
                     </Flex>
                     <Flex>
                       <div className="spacing-sm">
-                        <Input
-                          type="text"
-                          name="province"
-                          id="province"
-                          placeholder="AB"
-                        />
+                        <Select name="province" id="province">
+                          <option value="AB">Alberta</option>
+                          <option value="BC">British Columbia</option>
+                          <option value="MB">Manitoba</option>
+                          <option value="NB">New Brunswick</option>
+                          <option value="NL">Newfoundland and Labrador</option>
+                          <option value="NS">Nova Scotia</option>
+                          <option value="NT">Northwest Territories</option>
+                          <option value="NU">Nunavut</option>
+                          <option value="ON">Ontario</option>
+                          <option value="PE">Prince Edward Island</option>
+                          <option value="QC">Quebec</option>
+                          <option value="SK">Saskatchewan</option>
+                          <option value="YT">Yukon</option>
+                        </Select>
                         <Label for="province">province</Label>
                       </div>
                       <div className="spacing-sm">
@@ -405,19 +608,37 @@ export default function GetALoan() {
                           type="text"
                           name="postalCode"
                           id="postalCode"
-                          placeholder="T2X 3L6"
+                          placeholder="--- ---"
+                          required
                         />
                         <Label for="postalCode">postal code</Label>
                       </div>
                     </Flex>
                   </div>
+                  <Anchors>
+                    <AnchorLink
+                      className="previous"
+                      to="/get-a-loan#part5"
+                      title="previous"
+                    />
+                    <AnchorLink
+                      className="next"
+                      to="/get-a-loan#part7"
+                      title="continue"
+                    />
+                  </Anchors>
                 </QuestionArea>
-                <AnchorLink to="/get-a-loan#part7" title="continue" />
               </div>
             </Part>
             <Part id="part7">
               <div>
-                <PartTitle>title</PartTitle>
+                <PartTitle>
+                  how can we reach you?{" "}
+                  <span>
+                    We will need your contact information to let you know of
+                    your custom loan
+                  </span>
+                </PartTitle>
                 <QuestionArea className="spacing">
                   <QuestionTitle>contact information</QuestionTitle>
                   <div className="spacing">
@@ -428,6 +649,7 @@ export default function GetALoan() {
                           name="firstName"
                           id="firstName"
                           placeholder="John"
+                          required
                         />
                         <Label for="firstName">first name</Label>
                       </div>
@@ -437,6 +659,7 @@ export default function GetALoan() {
                           name="lastName"
                           id="lastName"
                           placeholder="Doe"
+                          required
                         />
                         <Label for="lastName">last name</Label>
                       </div>
@@ -448,6 +671,7 @@ export default function GetALoan() {
                           name="email"
                           id="email"
                           placeholder="johndoe@gmail.com"
+                          required
                         />
                         <Label for="email">your email</Label>
                       </div>
@@ -456,23 +680,41 @@ export default function GetALoan() {
                           type="tel"
                           name="phone"
                           id="phone"
-                          placeholder="403-000-0000"
+                          placeholder="000-000-0000"
+                          required
                         />
                         <Label for="phone">your phone number</Label>
                       </div>
                     </Flex>
                   </div>
+                  <Anchors>
+                    <AnchorLink
+                      className="previous"
+                      to="/get-a-loan#part6"
+                      title="previous"
+                    />
+                    <AnchorLink
+                      className="next"
+                      to="/get-a-loan#part8"
+                      title="continue"
+                    />
+                  </Anchors>
                 </QuestionArea>
-                <AnchorLink to="/get-a-loan#part8" title="continue" />
               </div>
             </Part>
             <Part id="part8">
               <div>
-                <PartTitle>title</PartTitle>
+                <PartTitle>
+                  last step!{" "}
+                  <span>
+                    This gives us all the information we need to customize your
+                    loan!
+                  </span>
+                </PartTitle>
                 <QuestionArea className="spacing">
                   <QuestionTitle>what is your birth date?</QuestionTitle>
-                  <BirthdayFlex>
-                    <InputInline
+                  {/* <BirthdayFlex>
+                    <Input
                       type="text"
                       name="birthday_day"
                       id="birthday_day"
@@ -480,8 +722,9 @@ export default function GetALoan() {
                       maxLength="2"
                       defaultValue=""
                       placeholder="DD"
+                      className="center"
                     />
-                    <InputInline
+                    <Input
                       type="text"
                       name="birthday_month"
                       id="birthday_month"
@@ -489,8 +732,9 @@ export default function GetALoan() {
                       maxLength="2"
                       defaultValue=""
                       placeholder="MM"
+                      className="center"
                     />
-                    <InputInline
+                    <Input
                       type="text"
                       name="birthday_year"
                       id="birthday_year"
@@ -498,15 +742,88 @@ export default function GetALoan() {
                       maxLength="4"
                       defaultValue=""
                       placeholder="YYYY"
+                      className="center"
+                    />
+                  </BirthdayFlex> */}
+                  <BirthdayFlex>
+                    <Select className="center">
+                      <option value="1">Janaury</option>
+                      <option value="2">February</option>
+                      <option value="3">March</option>
+                      <option value="4">April</option>
+                      <option value="5">May</option>
+                      <option value="6">June</option>
+                      <option value="7">July</option>
+                      <option value="8">August</option>
+                      <option value="9">September</option>
+                      <option value="10">October</option>
+                      <option value="11">November</option>
+                      <option value="12">December</option>
+                    </Select>
+                    <Select className="center">
+                      <option value="01">1</option>
+                      <option value="02">2</option>
+                      <option value="03">3</option>
+                      <option value="04">4</option>
+                      <option value="05">5</option>
+                      <option value="06">6</option>
+                      <option value="07">7</option>
+                      <option value="08">8</option>
+                      <option value="09">9</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                      <option value="13">13</option>
+                      <option value="14">14</option>
+                      <option value="15">15</option>
+                      <option value="16">16</option>
+                      <option value="17">17</option>
+                      <option value="18">18</option>
+                      <option value="19">19</option>
+                      <option value="20">20</option>
+                      <option value="21">21</option>
+                      <option value="22">22</option>
+                      <option value="23">23</option>
+                      <option value="24">24</option>
+                      <option value="25">25</option>
+                      <option value="26">26</option>
+                      <option value="27">27</option>
+                      <option value="28">28</option>
+                      <option value="29">29</option>
+                      <option value="30">30</option>
+                      <option value="31">31</option>
+                    </Select>
+                    <Input
+                      type="text"
+                      name="birthday_year"
+                      id="birthday_year"
+                      size="4"
+                      maxLength="4"
+                      defaultValue="1960"
+                      placeholder="YYYY"
+                      className="center"
+                      required
                     />
                   </BirthdayFlex>
+                  <Anchors>
+                    <AnchorLink
+                      className="previous"
+                      to="/get-a-loan#part7"
+                      title="previous"
+                    />
+                    <input
+                      className="submit"
+                      type="submit"
+                      id="submit"
+                      value="submit"
+                    />
+                  </Anchors>
                 </QuestionArea>
-                <AnchorLink to="/get-a-loan#part6" title="continue" />
               </div>
             </Part>
           </form>
         </Container>
-      </Section>
+      </>
     </Wrapper>
   )
 }

@@ -12,12 +12,17 @@ export const Input = styled.input`
   width: 100%;
   border-radius: var(--br);
   border: 1px solid var(--txt-dark-secondary);
-  padding: 1.2em;
+  padding: 1em;
   font-size: var(--fs-sm);
   font-family: var(--ff);
 
   &:focus {
-    outline: 1px solid var(--txt-dark-secondary);
+    outline: 1px solid var(--clr-accent-lighter);
+    border: 1px solid var(--clr-accent-lighter);
+  }
+
+  &[type="radio"]:focus-within {
+    color: red;
   }
 `
 
@@ -26,9 +31,13 @@ export const Select = styled.select`
   width: 100%;
   border-radius: var(--br);
   border: 1px solid var(--txt-dark-secondary);
-  padding: 1.2em;
+  padding: 1em;
   font-size: var(--fs-sm);
   font-family: var(--ff);
+  &:focus {
+    outline: 1px solid var(--clr-accent-lighter);
+    border: 1px solid var(--clr-accent-lighter);
+  }
 `
 export const LabelInline = styled.label`
   display: inline;
@@ -61,7 +70,7 @@ export const TextArea = styled.textarea`
   resize: none;
 
   &:focus {
-    outline: 1px solid var(--txt-dark-secondary);
+    outline: 1px solid var(--clr-accent);
   }
 `
 
