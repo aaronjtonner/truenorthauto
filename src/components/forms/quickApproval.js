@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Section, Container, FlexMobileOpp } from "../layoutComponents"
-import { Label, Input, TextArea, Submit } from "./formItems"
+import { Label, Input, TextArea, Submit, Select } from "./formItems"
 import Map from "../map"
 
 const Flex = styled.div`
@@ -91,25 +91,21 @@ export default function QuickApproval() {
               </div>
             </Flex>
             <div className="spacing-sm">
-              <Label htmlFor="phone">* Preferred Contact Method:</Label>
-              <Input
-                type="tel"
-                name="phone"
-                id="phone"
-                placeholder="Enter your phone number"
-                required
-              />
+              <Label htmlFor="preferredContactMethod">
+                * Preferred Contact Method:
+              </Label>
+              <Select name="preferredContactMethod" id="preferredContactMethod">
+                <option value="phone">Phone</option>
+                <option value="phone">Email</option>
+              </Select>
             </div>
-
             <div className="spacing-sm">
-              <Label htmlFor="subject">Preferred Time of Day:</Label>
-              <Input
-                type="text"
-                name="subject"
-                id="subject"
-                placeholder="Subject"
-                required
-              />
+              <Label htmlFor="preferredTimeOfDay">Preferred Time of Day:</Label>
+              <Select name="preferredTimeOfDay" id="preferredTimeOfDay">
+                <option value="morning">Morning</option>
+                <option value="afternoon">Afternoon</option>
+                <option value="evening">evening</option>
+              </Select>
             </div>
             <Submit type="submit" id="submit" value="get approved now" />
           </form>

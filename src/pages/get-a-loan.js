@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { Link } from "gatsby"
 import Layout from "../components/layout"
 import { Section } from "../components/layoutComponents"
 import {
@@ -13,7 +14,7 @@ import {
 } from "../components/forms/formItems"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 import { StaticImage } from "gatsby-plugin-image"
-
+import { Logo } from "../images/logo-tnal.svg"
 const device = {
   md: "48em",
 }
@@ -22,6 +23,12 @@ const Container = styled.div`
   width: 50%;
   margin: 0 auto;
   max-width: 85rem;
+`
+
+const LogoContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: var(--spacer);
 `
 
 const Wrapper = styled.div``
@@ -184,7 +191,6 @@ const VehicleChoice = styled.div`
   justify-content: center;
 
   @media screen and (max-width: 48em) {
-    flex-direction: column;
   }
 
   & > * + * {
@@ -215,9 +221,18 @@ export default function GetALoan() {
   return (
     <Wrapper>
       <>
-        <Container>
+        <Container className="">
+          <LogoContainer>
+            <Link to="/">
+              <StaticImage
+                src="../images/logo-tnal.svg"
+                alt="true north auto loans logo"
+                width={150}
+              />
+            </Link>
+          </LogoContainer>
           <form
-            name="contact"
+            name="full loan form"
             className="spacing-lg"
             method="POST"
             data-netlify="true"
