@@ -746,7 +746,7 @@ export default function GetALoan() {
                     />
                   </BirthdayFlex> */}
                   <BirthdayFlex>
-                    <Select className="center">
+                    <Select id="birthdayMonth" className="center">
                       <option value="1">Janaury</option>
                       <option value="2">February</option>
                       <option value="3">March</option>
@@ -760,7 +760,7 @@ export default function GetALoan() {
                       <option value="11">November</option>
                       <option value="12">December</option>
                     </Select>
-                    <Select className="center">
+                    <Select birthdayDay className="center">
                       <option value="01">1</option>
                       <option value="02">2</option>
                       <option value="03">3</option>
@@ -795,8 +795,8 @@ export default function GetALoan() {
                     </Select>
                     <Input
                       type="text"
-                      name="birthday_year"
-                      id="birthday_year"
+                      name="birthdayYear"
+                      id="birthdayYear"
                       size="4"
                       maxLength="4"
                       defaultValue="1960"
