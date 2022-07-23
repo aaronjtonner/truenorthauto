@@ -20,7 +20,7 @@ export default function Delivery() {
     <Section>
       <Container className="spacing">
         <div className="center">
-          <h2 className="title bold italics">free nation-wide delivery</h2>
+          <h2 className="title bold italics">free nationwide delivery</h2>
           <p className="accent upper">
             5000+ vehicles in stock ready to be shipped
           </p>

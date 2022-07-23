@@ -7,7 +7,10 @@ import SingleTestimonial from "./testimonials/singleTestimonial"
 export default function CustomerBanner1() {
   return (
     <Section>
-      <Container>
+      <Container className="spacing">
+        <h1 className="center title accent italics">
+          bad credit car loans canada - we'll get you approved!
+        </h1>
         <GridAuto>
           <div>
             <StaticImage

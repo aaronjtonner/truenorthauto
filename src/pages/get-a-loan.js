@@ -15,6 +15,7 @@ import {
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 import { StaticImage } from "gatsby-plugin-image"
 import { Logo } from "../images/logo-tnal.svg"
+import SEO from "../components/seo"
 const device = {
   md: "48em",
 }
@@ -220,6 +221,10 @@ const VehicleChoice = styled.div`
 export default function GetALoan() {
   return (
     <Wrapper>
+      <SEO
+        title="Get Approved Now! True North Auto Loans"
+        description="Online car loan form. Get approved on bad credit car loans using this form!"
+      />
       <>
         <Container className="">
           <LogoContainer>
@@ -747,40 +752,12 @@ export default function GetALoan() {
                 </PartTitle>
                 <QuestionArea className="spacing">
                   <QuestionTitle>what is your birth date?</QuestionTitle>
-                  {/* <BirthdayFlex>
-                    <Input
-                      type="text"
-                      name="birthday_day"
-                      id="birthday_day"
-                      size="2"
-                      maxLength="2"
-                      defaultValue=""
-                      placeholder="DD"
-                      className="center"
-                    />
-                    <Input
-                      type="text"
-                      name="birthday_month"
-                      id="birthday_month"
-                      size="2"
-                      maxLength="2"
-                      defaultValue=""
-                      placeholder="MM"
-                      className="center"
-                    />
-                    <Input
-                      type="text"
-                      name="birthday_year"
-                      id="birthday_year"
-                      size="4"
-                      maxLength="4"
-                      defaultValue=""
-                      placeholder="YYYY"
-                      className="center"
-                    />
-                  </BirthdayFlex> */}
                   <BirthdayFlex>
-                    <Select id="birthdayMonth" className="center">
+                    <Select
+                      name="birthdayMonth"
+                      id="birthdayMonth"
+                      className="center"
+                    >
                       <option value="1">Janaury</option>
                       <option value="2">February</option>
                       <option value="3">March</option>
@@ -794,7 +771,11 @@ export default function GetALoan() {
                       <option value="11">November</option>
                       <option value="12">December</option>
                     </Select>
-                    <Select birthdayDay className="center">
+                    <Select
+                      name="birthdayDay"
+                      id="birthdayDay"
+                      className="center"
+                    >
                       <option value="01">1</option>
                       <option value="02">2</option>
                       <option value="03">3</option>

@@ -18,8 +18,8 @@ export default function Index() {
   return (
     <Layout>
       <SEO
-        title="Auto Loans North Canada: Financing solutions for everyone!"
-        description="Dedicated to finding you the best auto loan in Canada for the vehicle you want. Whatever your credit rating, True North Auto Loans is here to help!"
+        title="Bad Credit Car Loans Canada - Guaranteed Approval in 48 Hours!"
+        description="True North Auto Loans offers guaranteed car loan approval on your bad credit in Canada with free nationwide delivery and groceries included. Apply now!"
       />
       <HeroBasic />
       <CustomerBanner1 />
